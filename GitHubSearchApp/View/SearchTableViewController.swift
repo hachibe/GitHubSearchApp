@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  SearchTableViewController.swift
 //  GitHubSearchApp
 //
 //  Created by 坪内 征悟 on 2017/03/04.
@@ -9,12 +9,10 @@
 import UIKit
 
 class SearchTableViewController: UITableViewController, UISearchBarDelegate {
-//class SearchTableViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Properties
     
-    var responseItems = [Repository]()
-    let cellIdentifier = "cellID"
+    var repositories = [Repository]()
 
     // MARK: - View Life Cycle
     
@@ -42,7 +40,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         client.send(request: request) { [weak self] result in
             switch result {
             case let .success(response):
-                self?.responseItems = response.items
+                self?.repositories = response.items
                 self?.tableView.reloadData()
                 
                 // こうしないとセルに反映されない
@@ -64,18 +62,27 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return responseItems.count / 10
+        return repositories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "repositoryCellID", for: indexPath)
-        let item = responseItems[indexPath.row]
+        if repositories.count <= indexPath.row {
+            assertionFailure("indexPath.row exceeds count of repositories.")
+            return cell
+        }
+        let item = repositories[indexPath.row]
         cell.textLabel?.text = item.owner.login + "/" + item.name
         cell.textLabel?.numberOfLines = 0
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "DetailViewController", bundle: nil)
+        if let vc = storyboard.instantiateInitialViewController() as? DetailViewController {
+            vc.repository = repositories[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

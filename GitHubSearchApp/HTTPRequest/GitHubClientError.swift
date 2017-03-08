@@ -15,4 +15,7 @@ enum GitHubClientError : Error {
     
     // APIからエラーレスポンスを受け取った
     case apiError(GitHubAPIError)
+    
+    // 通信キャンセル
+    case cancel
 }

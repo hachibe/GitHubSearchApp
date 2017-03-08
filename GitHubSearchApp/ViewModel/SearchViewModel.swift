@@ -29,9 +29,12 @@ class SearchViewModel : ViewModel {
                 case let .success(response):
                     self?.stateDidUpdate?(.success(response))
                 case let .failure(error):
-                    self?.stateDidUpdate?(.failure(error))
-                case .cancel:
-                    self?.stateDidUpdate?(.cancel)
+                    switch error {
+                    case .cancel:
+                        self?.stateDidUpdate?(.cancel)
+                    default:
+                        self?.stateDidUpdate?(.failure(error))
+                    }
                 }
             }
         }

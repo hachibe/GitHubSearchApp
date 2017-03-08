@@ -6,12 +6,9 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-//import Foundation
-
 enum Result<T, Error : Swift.Error> {
     case success(T)
     case failure(Error)
-    case cancel
     
     init(value: T) {
         self = .success(value)

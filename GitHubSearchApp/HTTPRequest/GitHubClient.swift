@@ -28,7 +28,7 @@ class GitHubClient {
             switch (data, response, error) {
             case (_, _, let error?):
                 if error._code == NSURLErrorCancelled {
-                    completion(Result.cancel)
+                    completion(Result(error: .cancel))
                 } else {
                     completion(Result(error: .connectionError(error)))
                 }

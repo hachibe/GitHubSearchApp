@@ -23,4 +23,3 @@ class DetailViewController: UIViewController {
         label.text = "login: \(repository.owner.login)\nname: \(repository.name)\nfull name: \(repository.fullName)"
     }
 }
-

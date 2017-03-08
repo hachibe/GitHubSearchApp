@@ -1,17 +1,16 @@
 //
-//  Result.swift
-//  GitHubSearchRepository
+//  HTTPState.swift
+//  GitHubSearchApp
 //
-//  Created by 坪内 征悟 on 2017/03/04.
+//  Created by 坪内 征悟 on 2017/03/07.
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-//import Foundation
-
-enum Result<T, Error : Swift.Error> {
+enum HTTPState<T, Error : Swift.Error> {
+    case loading
+    case cancel
     case success(T)
     case failure(Error)
-    case cancel
     
     init(value: T) {
         self = .success(value)

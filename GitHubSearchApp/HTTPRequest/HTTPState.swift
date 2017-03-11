@@ -8,7 +8,6 @@
 
 enum HTTPState<T, Error : Swift.Error> {
     case loading
-    case cancel
     case success(T)
     case failure(Error)
     

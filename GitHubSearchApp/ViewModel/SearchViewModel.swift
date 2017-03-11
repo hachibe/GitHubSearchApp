@@ -10,7 +10,7 @@ import Foundation
 
 class SearchViewModel : ViewModel {
     
-    var stateDidUpdate: ((HTTPState<SearchResponse<Repository>, GitHubClientError>) -> Void)?
+    var stateDidUpdate: ((HTTPState<GitHubAPI.SearchRepositories.Response, GitHubClientError>) -> Void)?
     private var client: GitHubClient?
     
     /// リポジトリを検索する
@@ -29,12 +29,7 @@ class SearchViewModel : ViewModel {
                 case let .success(response):
                     self?.stateDidUpdate?(.success(response))
                 case let .failure(error):
-                    switch error {
-                    case .cancel:
-                        self?.stateDidUpdate?(.cancel)
-                    default:
-                        self?.stateDidUpdate?(.failure(error))
-                    }
+                    self?.stateDidUpdate?(.failure(error))
                 }
             }
         }

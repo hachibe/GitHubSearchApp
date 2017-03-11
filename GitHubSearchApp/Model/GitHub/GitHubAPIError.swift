@@ -7,7 +7,7 @@
 //
 
 struct GitHubAPIError : JSONDecodable, Error {
-    struct FieldError: JSONDecodable {
+    struct FieldError : JSONDecodable {
         let resource: String
         let field: String
         let code: String

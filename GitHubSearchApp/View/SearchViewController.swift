@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController,
+class SearchViewController : UIViewController,
                             UISearchBarDelegate,
                             UITableViewDataSource,
                             UITableViewDelegate,
@@ -38,14 +38,17 @@ class SearchViewController: UIViewController,
             switch state {
             case .loading:
                 me.showLoading()
-            case .cancel:
-                me.hideLoading()
             case let .success(response):
                 me.hideLoading()
                 me.updateRepositories(response.items)
             case let .failure(error):
                 me.hideLoading()
-                me.showSearchError(error)
+                // GitHubClientErrorがEquatableを実装して入ればif文可
+                guard case GitHubClientError.cancel = error else {
+//                if case GitHubClientError.cancel = error {} else {
+                    me.showSearchError(error)
+                    return
+                }
             }
         }
     }
@@ -98,7 +101,15 @@ class SearchViewController: UIViewController,
     
     /// 検索エラーを表示
     private func showSearchError(_ error: Error) {
-        let alert = UIAlertController(title: "エラー", message: "\(error)", preferredStyle: .alert)
+        let message: String
+        if case GitHubClientError.connectionError(_) = error {
+            message = "通信に失敗し、検索結果を取得できませんでした"
+        } else if case GitHubClientError.apiError(let apiError) = error {
+            message = apiError.message
+        } else {
+            message = "\(error)"
+        }
+        let alert = UIAlertController(title: "検索エラー", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { action in
             alert.dismiss(animated: true, completion: nil)
         })

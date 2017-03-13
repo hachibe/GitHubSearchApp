@@ -43,11 +43,8 @@ class SearchViewController : UIViewController,
                 me.updateRepositories(response.items)
             case let .failure(error):
                 me.hideLoading()
-                // GitHubClientErrorがEquatableを実装して入ればif文可
-                guard case GitHubClientError.cancel = error else {
-//                if case GitHubClientError.cancel = error {} else {
+                if error != GitHubClientError.cancel {
                     me.showSearchError(error)
-                    return
                 }
             }
         }

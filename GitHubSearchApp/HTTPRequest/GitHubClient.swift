@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class GitHubClient {
     
@@ -24,7 +25,7 @@ class GitHubClient {
         let urlRequest = request.buildURLRequest()
         dataTask = session.dataTask(with: urlRequest) {
             data, response, error in
-            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             switch (data, response, error) {
             case (_, _, let error?):
                 if error._code == NSURLErrorCancelled {
@@ -46,6 +47,7 @@ class GitHubClient {
             }
         }
         dataTask!.resume()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     func cancel() {

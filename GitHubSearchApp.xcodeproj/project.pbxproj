@@ -15,6 +15,9 @@
 		08A174561E6D858000CA58B0 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A174551E6D858000CA58B0 /* SearchViewController.storyboard */; };
 		08A1745A1E6D85F600CA58B0 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A174581E6D85F600CA58B0 /* DetailViewController.storyboard */; };
 		08A1745B1E6D85F600CA58B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A174591E6D85F600CA58B0 /* DetailViewController.swift */; };
+		8C6260CA1E90BFC400E44518 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE721E6C65E700ACE628 /* User.swift */; };
+		8C6260CB1E90C02700E44518 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE741E6C65E700ACE628 /* JSONDecodable.swift */; };
+		8C6260CC1E90C06100E44518 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE751E6C65E700ACE628 /* JSONDecodeError.swift */; };
 		8CA0DE3A1E6A6BFC00ACE628 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE391E6A6BFC00ACE628 /* AppDelegate.swift */; };
 		8CA0DE4F1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE4E1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift */; };
 		8CA0DE5A1E6A6BFD00ACE628 /* GitHubSearchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE591E6A6BFD00ACE628 /* GitHubSearchAppUITests.swift */; };
@@ -416,6 +419,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6260CC1E90C06100E44518 /* JSONDecodeError.swift in Sources */,
+				8C6260CB1E90C02700E44518 /* JSONDecodable.swift in Sources */,
+				8C6260CA1E90BFC400E44518 /* User.swift in Sources */,
 				8CA0DE4F1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,7 +582,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GitHubSearchAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.GitHubSearchAppTests;
@@ -590,7 +595,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GitHubSearchAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.GitHubSearchAppTests;

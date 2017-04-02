@@ -24,6 +24,11 @@ class GitHubSearchAppTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let jsonString = "{\"id\": 123,\"login\": \"test_login\"}"
+        let json = try! JSONSerialization.jsonObject(with: jsonString.data(using: .utf8)!, options: [])
+        let user = try! User.init(json: json)
+        XCTAssertEqual(user.id, 123)
+        XCTAssertEqual(user.login, "test_login")
     }
     
     func testPerformanceExample() {

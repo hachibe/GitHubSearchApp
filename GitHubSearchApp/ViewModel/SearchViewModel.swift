@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchViewModel : ViewModel {
+class SearchViewModel: ViewModel {
     
     var stateDidUpdate: ((HTTPState<GitHubAPI.SearchRepositories.Response, GitHubClientError>) -> Void)?
     private var client: GitHubClient?

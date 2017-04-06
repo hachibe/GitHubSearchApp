@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-struct SearchResponse<Item : JSONDecodable> : JSONDecodable {
+struct SearchResponse<Item: JSONDecodable>: JSONDecodable {
     let totalCount: Int
     let items: [Item]
     

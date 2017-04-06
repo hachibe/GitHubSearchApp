@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-struct Repository : JSONDecodable {
+struct Repository: JSONDecodable {
     let id: Int
     let name: String
     let fullName: String

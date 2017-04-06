@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-enum GitHubClientError : Error, Equatable {
+enum GitHubClientError: Error, Equatable {
     // 通信に失敗
     case connectionError(Error)
     
@@ -19,7 +19,7 @@ enum GitHubClientError : Error, Equatable {
     // 通信キャンセル
     case cancel
     
-    static func ==(lhs: GitHubClientError, rhs: GitHubClientError) -> Bool {
+    static func == (lhs: GitHubClientError, rhs: GitHubClientError) -> Bool {
         switch (lhs, rhs) {
         case (.cancel, .cancel):
             return true

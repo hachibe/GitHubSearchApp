@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController : UIViewController,
+class SearchViewController: UIViewController,
                             UISearchBarDelegate,
                             UITableViewDataSource,
                             UITableViewDelegate,
@@ -92,7 +92,7 @@ class SearchViewController : UIViewController,
         // こうしないとセルに反映されない
         // http://qiita.com/usagimaru/items/e1cb82ae7f0ed75c8e63
         DispatchQueue.main.async {
-            let _ = self.tableView.visibleCells
+            _ = self.tableView.visibleCells
         }
     }
     
@@ -107,7 +107,7 @@ class SearchViewController : UIViewController,
             message = "\(error)"
         }
         let alert = UIAlertController(title: "検索エラー", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
+        let action = UIAlertAction(title: "OK", style: .default, handler: { _ in
             alert.dismiss(animated: true, completion: nil)
         })
         alert.addAction(action)
@@ -165,4 +165,3 @@ class SearchViewController : UIViewController,
         searchBar.resignFirstResponder()
     }
 }
-

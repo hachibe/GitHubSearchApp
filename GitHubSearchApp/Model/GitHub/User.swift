@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-struct User : JSONDecodable {
+struct User: JSONDecodable {
     let id: Int
     let login: String
     

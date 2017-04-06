@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-enum HTTPState<T, Error : Swift.Error> {
+enum HTTPState<T, Error: Swift.Error> {
     case loading
     case success(T)
     case failure(Error)

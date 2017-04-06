@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-struct GitHubAPIError : JSONDecodable, Error {
-    struct FieldError : JSONDecodable {
+struct GitHubAPIError: JSONDecodable, Error {
+    struct FieldError: JSONDecodable {
         let resource: String
         let field: String
         let code: String

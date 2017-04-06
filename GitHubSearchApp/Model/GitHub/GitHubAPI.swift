@@ -7,7 +7,7 @@
 //
 
 final class GitHubAPI {
-    struct SearchRepositories : GitHubRequest {
+    struct SearchRepositories: GitHubRequest {
         let keyword: String
         
         // GitHubRequestが要求する連想型
@@ -26,7 +26,7 @@ final class GitHubAPI {
         }
     }
     
-    struct SearchUsers : GitHubRequest {
+    struct SearchUsers: GitHubRequest {
         let keyword: String
         
         typealias Response = SearchResponse<User>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingView : UIView {
+class LoadingView: UIView {
     
     /// nibの基底viewをloadする
     class func loadNibView() -> LoadingView {

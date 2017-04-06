@@ -26,7 +26,7 @@ class GitHubSearchAppTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let jsonString = "{\"id\": 123,\"login\": \"test_login\"}"
         let json = try! JSONSerialization.jsonObject(with: jsonString.data(using: .utf8)!, options: [])
-        let user = try! User.init(json: json)
+        let user = try! User(json: json)
         XCTAssertEqual(user.id, 123)
         XCTAssertEqual(user.login, "test_login")
     }

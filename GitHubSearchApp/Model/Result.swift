@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
 //
 
-enum Result<T, Error : Swift.Error> {
+enum Result<T, Error: Swift.Error> {
     case success(T)
     case failure(Error)
     

@@ -1,3 +1,5 @@
+# version: 0.17.0
+
 # 無効にするルール
 disabled_rules:
 - force_cast

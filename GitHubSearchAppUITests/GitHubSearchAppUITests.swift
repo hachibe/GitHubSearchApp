@@ -2,8 +2,8 @@
 //  GitHubSearchAppUITests.swift
 //  GitHubSearchAppUITests
 //
-//  Created by 坪内 征悟 on 2017/03/04.
-//  Copyright © 2017年 Masanori Tsubouchi. All rights reserved.
+//  Created by Hachibe on 2017/03/04.
+//  Copyright © 2017年 Masanori. All rights reserved.
 //
 
 import XCTest

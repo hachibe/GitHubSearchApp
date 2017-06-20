@@ -111,7 +111,7 @@ class SearchViewController: UIViewController,
             alert.dismiss(animated: true, completion: nil)
         })
         alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - UISearchBarDelegate
@@ -155,7 +155,7 @@ class SearchViewController: UIViewController,
         let storyboard = UIStoryboard(name: "DetailViewController", bundle: nil)
         if let vc = storyboard.instantiateInitialViewController() as? DetailViewController {
             vc.repository = repositories[indexPath.row]
-            self.navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

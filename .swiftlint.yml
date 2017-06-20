@@ -1,5 +1,10 @@
 # version: 0.17.0
 
+# Lint対象から外すファイル
+excluded:
+- Carthage
+- Pods
+
 # 無効にするルール
 disabled_rules:
 - force_cast

@@ -29,7 +29,8 @@ extension GitHubRequest {
         switch method {
         case .get:
             let dictionary = parameters as? [String : Any]
-            let queryItems = dictionary?.map { key, value in
+            let queryItems = dictionary?.map { (arg) -> URLQueryItem in
+                let (key, value) = arg
                 return URLQueryItem(name: key, value: String(describing: value))
             }
             components?.queryItems = queryItems

@@ -19,7 +19,7 @@
 		8C6260CB1E90C02700E44518 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE741E6C65E700ACE628 /* JSONDecodable.swift */; };
 		8C6260CC1E90C06100E44518 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE751E6C65E700ACE628 /* JSONDecodeError.swift */; };
 		8CA0DE3A1E6A6BFC00ACE628 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE391E6A6BFC00ACE628 /* AppDelegate.swift */; };
-		8CA0DE4F1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE4E1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift */; };
+		8CA0DE4F1E6A6BFD00ACE628 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE4E1E6A6BFD00ACE628 /* UserTests.swift */; };
 		8CA0DE5A1E6A6BFD00ACE628 /* GitHubSearchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE591E6A6BFD00ACE628 /* GitHubSearchAppUITests.swift */; };
 		8CA0DE771E6C65E700ACE628 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE681E6C65E700ACE628 /* GitHubClient.swift */; };
 		8CA0DE781E6C65E700ACE628 /* GitHubClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0DE691E6C65E700ACE628 /* GitHubClientError.swift */; };
@@ -67,7 +67,7 @@
 		8CA0DE361E6A6BFC00ACE628 /* GitHubSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA0DE391E6A6BFC00ACE628 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CA0DE4A1E6A6BFD00ACE628 /* GitHubSearchAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CA0DE4E1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchAppTests.swift; sourceTree = "<group>"; };
+		8CA0DE4E1E6A6BFD00ACE628 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		8CA0DE501E6A6BFD00ACE628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CA0DE551E6A6BFD00ACE628 /* GitHubSearchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA0DE591E6A6BFD00ACE628 /* GitHubSearchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchAppUITests.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		8CA0DE4D1E6A6BFD00ACE628 /* GitHubSearchAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CA0DE4E1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift */,
+				8CA0DE4E1E6A6BFD00ACE628 /* UserTests.swift */,
 				8CA0DE501E6A6BFD00ACE628 /* Info.plist */,
 			);
 			path = GitHubSearchAppTests;
@@ -322,7 +322,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = "Masanori";
+				ORGANIZATIONNAME = Masanori;
 				TargetAttributes = {
 					8CA0DE351E6A6BFC00ACE628 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -439,7 +439,7 @@
 				8C6260CC1E90C06100E44518 /* JSONDecodeError.swift in Sources */,
 				8C6260CB1E90C02700E44518 /* JSONDecodable.swift in Sources */,
 				8C6260CA1E90BFC400E44518 /* User.swift in Sources */,
-				8CA0DE4F1E6A6BFD00ACE628 /* GitHubSearchAppTests.swift in Sources */,
+				8CA0DE4F1E6A6BFD00ACE628 /* UserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
